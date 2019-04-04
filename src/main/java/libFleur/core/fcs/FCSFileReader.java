@@ -5,19 +5,6 @@
  */
 package libFleur.core.fcs;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.google.common.hash.HashCode;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
@@ -27,6 +14,15 @@ import libFleur.core.data.FCSFrame;
 import libFleur.core.logging.LogFactory;
 import libFleur.core.utils.FCSUtilities;
 import libFleur.core.utils.MatrixUtilities;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FCSFileReader {
 
@@ -225,8 +221,6 @@ public class FCSFileReader {
         }
       }
     }
-
-
 
     HashFunction md = Hashing.sha256();
     HashCode code = md.hashBytes(keywordBytes);
